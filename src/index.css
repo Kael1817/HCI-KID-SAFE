@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+@import 'tailwindcss';
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+  }
+
+  body {
+    height: 100vh;
+  }
+}
+
+@theme {
+  --font-headings: 'Anton', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --color-primary: #002147;
+  --color-secondary: #909FAA;
+  --color-tertiary: #808080;
+}
