@@ -2,17 +2,17 @@ import background from "../assets/background 1.png";
 import logo from "../assets/school_logo.png";
 function Login() {
   return (
-    <div className="login-page relative flex justify-between py-16 px-25 min-h-screen bg-cover bg-center" style={{ backgroundImage: `url(${background})` }}>
-  <div className="absolute inset-0 bg-black opacity-35 z-0"></div> {/* ← dark overlay */}
+  <div className="login-page relative flex justify-between py-16 px-25 min-h-screen bg-cover bg-center" style={{ backgroundImage: `url(${background})` }}>
+  <div className="absolute inset-0 bg-black opacity-20 z-0"></div> {/* ← dark overlay */}
   
   <div className="relative z-10 flex justify-between w-full">
     {/* Left Side */}
     <div className="left-side">
-      <div className="left-content flex items-center mb-23">
+      <div className="left-content flex items-center mb-25">
         <img src={logo} alt="logo" className="w-[80px] h-[80px]" />
         <p className="text-white text-xl font-bold">Rosa L. Susano Novaliches Elementary School</p>
       </div>
-      <h1 className="text-6xl text-white font-bold">WELCOME BACK!</h1>
+      <h1 className="text-7xl text-white font-headings">WELCOME BACK!</h1>
       <p className="text-white text-2xl">Good to see you again.</p>
     </div>
 
