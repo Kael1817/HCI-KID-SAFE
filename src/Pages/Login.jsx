@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import background from "../assets/background 1.png";
 import logo from "../assets/school_logo.png";
 function Login() {
@@ -23,8 +24,8 @@ function Login() {
         <input type="text" placeholder="Username" id="username" className="bg-white rounded-[10px] w-full h-11 p-2.5"/>
         <input type="password" placeholder="Password" id="password" className="bg-white rounded-[10px] w-full h-11 p-2.5 mb-10"/>
         <button className="bg-primary text-white font-bold w-full h-11 rounded-xl cursor-pointer text-xl">Login</button>
-        <a href="#" className="mb-23 text-white font-bold">Reset Password</a>
-        <p className="text-white ">Don't have an account? <a href="#" className="font-bold">Sign Up</a></p>
+        <Link to="/reset-password" className="text-white font-bold mb-23">Forgot Password?</Link>
+        <p className="text-white ">Don't have an account? <Link to={"/sign-up"} className="font-bold">Sign Up</Link></p>
       </div>
     </div>
   </div>
