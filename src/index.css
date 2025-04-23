@@ -1,8 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import 'tailwindcss';
 
+/* Base styles */
 @layer base {
   * {
     margin: 0;
@@ -17,6 +16,7 @@
   }
 }
 
+/* Custom Theme Variables */
 @theme {
   --font-headings: 'Anton', sans-serif;
   --font-body: 'Inter', sans-serif;
@@ -24,4 +24,12 @@
   --color-primary: #002147;
   --color-secondary: #909FAA;
   --color-tertiary: #808080;
+  --color-quaternary: #05426D;
+}
+
+/* Custom Utility Classes */
+@layer utilities {
+  .font-headings {
+    font-family: var(--font-headings);
+  }
 }
