@@ -1,14 +1,9 @@
-import { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import background from "../assets/background 1.png";
 import logo from "../assets/school_logo.png";
 
-function Login() {
-  const [modal, setModal] = useState(false);
-
-  const toggleModal = () => {
-    setModal(!modal);
-  }
+function ChooseRole() {
   return (
     <div
       className="login-page relative flex justify-between py-16 px-25 min-h-screen bg-cover bg-center"
@@ -28,33 +23,23 @@ function Login() {
           <p className="text-white text-2xl">Good to see you again.</p>
         </div>
 
+
         <div className="login-panel w-[450px] h-[581px] p-9 bg-[rgba(144,159,170,0.8)] rounded-4xl">
-          <div className="login-content flex flex-col items-center gap-4 h-full">
-            <h1 className="text-5xl text-primary font-headings mb-17">LOGIN</h1>
-            <input
-              type="text"
-              placeholder="Username"
-              id="username"
-              className="bg-white rounded-[10px] w-full h-11 p-2.5"
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              id="password"
-              className="bg-white rounded-[10px] w-full h-11 p-2.5 mb-10"
-            />
-            <button className="bg-primary text-white font-bold w-full h-11 rounded-xl cursor-pointer text-xl" onClick={toggleModal}>
+          <div className="login-content flex flex-col items-center h-full">
+            <h1 className="text-5xl text-primary font-headings mb-15">CHOOSE ROLE</h1>
+            <button className="bg-white w-full h-25 rounded-xl cursor-pointer text-xl font-bold mb-5">
+              Parent/Guardian
+            </button>
+            <button className="bg-white w-full h-25 rounded-xl cursor-pointer text-xl font-bold mb-10">
+              TEACHER
+            </button>
+            
+            <button className="bg-primary text-white font-bold w-full h-11 rounded-xl cursor-pointer text-xl mb-3">
               Login
             </button>
-            <Link to="/reset-password" className="text-white font-bold mb-23">
-              Forgot Password?
+            <Link to="/sign-up" className="text-white font-bold">
+              Back to Sign Up
             </Link>
-            <p className="text-white">
-              Don't have an account?{" "}
-              <Link to="/sign-up" className="font-bold">
-                Sign Up
-              </Link>
-            </p>
           </div>
         </div>
       </div>
@@ -62,4 +47,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default ChooseRole;
