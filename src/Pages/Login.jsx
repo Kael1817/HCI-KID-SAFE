@@ -13,7 +13,7 @@ function Login() {
       <div className="relative z-10 flex justify-between w-full">
         <div className="left-side">
           <div className="left-content flex items-center mb-25">
-            <img src={logo} alt="logo" className="w-[80px] h-[80px]" />
+            <img src={logo} alt="logo" className="w-[80px] h-[80px]"/>
             <p className="text-white text-xl font-bold">
               Rosa L. Susano Novaliches Elementary School
             </p>
