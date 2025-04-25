@@ -12,24 +12,12 @@
     "address": "123 Main St, Cityville"
   },
   {
-    "id": 2,
-    "name": "Maria",
-    "lastName": "Reyes",
-    "middleName": "Lopez",
-    "lrn": "987654321",
-    "section": "Bonifacio",
-    "adviser": "Ms. Gomez",
-    "parentName": "Carlos Reyes",
-    "parentContact": "09987654321",
-    "address": "456 Park Ave, Townsville"
-  },
-  {
     "id": 3,
     "name": "Carlos",
     "lastName": "Santos",
     "middleName": "Cruz",
     "lrn": "456123789",
-    "section": "Luna",
+    "section": "Antonio Luna",
     "adviser": "Mr. Dela Cruz",
     "parentName": "Lucia Santos",
     "parentContact": "09112223344",
@@ -46,18 +34,6 @@
     "parentName": "Mario Garcia",
     "parentContact": "09223334455",
     "address": "101 Pine Rd, Villagetown"
-  },
-  {
-    "id": 5,
-    "name": "Mark",
-    "lastName": "Dela Cruz",
-    "middleName": "Bautista",
-    "lrn": "741852963",
-    "section": "Aguinaldo",
-    "adviser": "Mr. Martinez",
-    "parentName": "Elena Dela Cruz",
-    "parentContact": "09445556677",
-    "address": "202 Maple Ln, Countryside"
   },
   {
     "id": 6,
@@ -77,23 +53,11 @@
     "lastName": "Torres",
     "middleName": "Navarro",
     "lrn": "159753486",
-    "section": "Malvar",
+    "section": "Quezon",
     "adviser": "Mr. Pascual",
     "parentName": "Alicia Torres",
     "parentContact": "09668889900",
     "address": "404 Birch Cir, Sitio Dos"
-  },
-  {
-    "id": 8,
-    "name": "Julia",
-    "lastName": "Martinez",
-    "middleName": "Perez",
-    "lrn": "234567890",
-    "section": "Magellan",
-    "adviser": "Ms. Reyes",
-    "parentName": "Luis Martinez",
-    "parentContact": "09876543210",
-    "address": "567 Pine St, Cityville"
   },
   {
     "id": 9,
@@ -101,35 +65,11 @@
     "lastName": "Gonzales",
     "middleName": "Alvarez",
     "lrn": "345678901",
-    "section": "Aguinaldo",
+    "section": "Dadul",
     "adviser": "Mr. Morales",
     "parentName": "Ana Gonzales",
     "parentContact": "09123456780",
     "address": "678 Oak Ave, Townsville"
-  },
-  {
-    "id": 10,
-    "name": "Sophia",
-    "lastName": "Hernandez",
-    "middleName": "Mendoza",
-    "lrn": "456789012",
-    "section": "Del Pilar",
-    "adviser": "Ms. Santos",
-    "parentName": "Juan Hernandez",
-    "parentContact": "09123456781",
-    "address": "789 Birch Rd, Villagetown"
-  },
-  {
-    "id": 11,
-    "name": "Miguel",
-    "lastName": "Lopez",
-    "middleName": "Gutierrez",
-    "lrn": "567890123",
-    "section": "Luna",
-    "adviser": "Mr. Gomez",
-    "parentName": "Lucia Lopez",
-    "parentContact": "09123456782",
-    "address": "890 Maple Ln, Suburbia"
   },
   {
     "id": 12,
@@ -142,30 +82,6 @@
     "parentName": "Jose Vargas",
     "parentContact": "09123456783",
     "address": "901 Oak Blvd, Barangay Uno"
-  },
-  {
-    "id": 13,
-    "name": "Jose",
-    "lastName": "Diaz",
-    "middleName": "Torres",
-    "lrn": "789012345",
-    "section": "Bonifacio",
-    "adviser": "Mr. Perez",
-    "parentName": "Raul Diaz",
-    "parentContact": "09123456784",
-    "address": "112 Pine Rd, Sitio Dos"
-  },
-  {
-    "id": 14,
-    "name": "Lucia",
-    "lastName": "Garcia",
-    "middleName": "Martinez",
-    "lrn": "890123456",
-    "section": "Mabini",
-    "adviser": "Ms. Rivera",
-    "parentName": "Carlos Garcia",
-    "parentContact": "09123456785",
-    "address": "123 Oak Blvd, Cityville"
   },
   {
     "id": 15,
@@ -185,23 +101,11 @@
     "lastName": "Perez",
     "middleName": "Santos",
     "lrn": "123450987",
-    "section": "Bonifacio",
+    "section": "Quezon",
     "adviser": "Ms. Rivera",
     "parentName": "Luis Perez",
     "parentContact": "09123456787",
     "address": "567 Maple Ln, Countryside"
-  },
-  {
-    "id": 17,
-    "name": "Enrico",
-    "lastName": "Santos",
-    "middleName": "Navarro",
-    "lrn": "234567891",
-    "section": "Malvar",
-    "adviser": "Mr. Santos",
-    "parentName": "Carmen Santos",
-    "parentContact": "09123456788",
-    "address": "890 Pine Rd, Barangay Uno"
   },
   {
     "id": 18,
@@ -209,23 +113,11 @@
     "lastName": "Martinez",
     "middleName": "Garcia",
     "lrn": "345678902",
-    "section": "Aguinaldo",
+    "section": "Antonio Luna",
     "adviser": "Mr. Lopez",
     "parentName": "Juan Martinez",
     "parentContact": "09123456789",
     "address": "234 Birch Cir, Suburbia"
-  },
-  {
-    "id": 19,
-    "name": "Pedro",
-    "lastName": "Lopez",
-    "middleName": "Santos",
-    "lrn": "456789013",
-    "section": "Luna",
-    "adviser": "Ms. Reyes",
-    "parentName": "Lucia Lopez",
-    "parentContact": "09123456790",
-    "address": "789 Pine St, Sitio Dos"
   },
   {
     "id": 20,
@@ -240,88 +132,16 @@
     "address": "345 Maple Ln, Villagetown"
   },
   {
-    "id": 21,
-    "name": "Salvador",
-    "lastName": "Perez",
-    "middleName": "Gonzalez",
-    "lrn": "678901235",
-    "section": "Aguinaldo",
-    "adviser": "Ms. Lopez",
-    "parentName": "Ana Perez",
-    "parentContact": "09123456792",
-    "address": "456 Birch Cir, Barangay Uno"
-  },
-  {
     "id": 22,
     "name": "Gabriela",
     "lastName": "Reyes",
     "middleName": "Santos",
     "lrn": "789012346",
-    "section": "Malvar",
+    "section": "Antonio Luna",
     "adviser": "Mr. Lopez",
     "parentName": "Carlos Reyes",
     "parentContact": "09123456793",
     "address": "567 Pine Rd, Townsville"
-  },
-  {
-    "id": 23,
-    "name": "Santiago",
-    "lastName": "Gutierrez",
-    "middleName": "Alvarez",
-    "lrn": "890123457",
-    "section": "Luna",
-    "adviser": "Ms. Rivera",
-    "parentName": "Jose Gutierrez",
-    "parentContact": "09123456794",
-    "address": "678 Oak Blvd, Sitio Dos"
-  },
-  {
-    "id": 24,
-    "name": "Nina",
-    "lastName": "Garcia",
-    "middleName": "Vargas",
-    "lrn": "901234568",
-    "section": "Bonifacio",
-    "adviser": "Mr. Dela Cruz",
-    "parentName": "Pedro Garcia",
-    "parentContact": "09123456795",
-    "address": "789 Maple Ln, Villagetown"
-  },
-  {
-    "id": 25,
-    "name": "Marco",
-    "lastName": "Vargas",
-    "middleName": "Martinez",
-    "lrn": "234567892",
-    "section": "Aguinaldo",
-    "adviser": "Ms. Rivera",
-    "parentName": "Sofia Vargas",
-    "parentContact": "09123456796",
-    "address": "890 Oak Blvd, Suburbia"
-  },
-  {
-    "id": 26,
-    "name": "Bianca",
-    "lastName": "Torres",
-    "middleName": "Gonzales",
-    "lrn": "345678903",
-    "section": "Malvar",
-    "adviser": "Mr. Perez",
-    "parentName": "Carlos Torres",
-    "parentContact": "09123456797",
-    "address": "234 Pine Rd, Barangay Uno"
-  },
-  {
-    "id": 27,
-    "name": "Marcos",
-    "lastName": "Reyes",
-    "middleName": "Lopez",
-    "lrn": "456789014",
-    "section": "Luna",
-    "adviser": "Ms. Santos",
-    "parentName": "Lucia Reyes",
-    "parentContact": "09123456798",
-    "address": "567 Birch Cir, Townsville"
   },
   {
     "id": 28,
@@ -334,29 +154,5 @@
     "parentName": "Pedro Diaz",
     "parentContact": "09123456799",
     "address": "678 Oak Blvd, Cityville"
-  },
-  {
-    "id": 29,
-    "name": "Lucia",
-    "lastName": "Martinez",
-    "middleName": "Torres",
-    "lrn": "678901236",
-    "section": "Bonifacio",
-    "adviser": "Ms. Gomez",
-    "parentName": "Sofia Martinez",
-    "parentContact": "09123456800",
-    "address": "789 Pine Rd, Countryside"
-  },
-  {
-    "id": 30,
-    "name": "Carlos",
-    "lastName": "Santos",
-    "middleName": "Gonzalez",
-    "lrn": "789012347",
-    "section": "Mabini",
-    "adviser": "Mr. Martinez",
-    "parentName": "Juan Santos",
-    "parentContact": "09123456801",
-    "address": "890 Birch Cir, Barangay Uno"
   }
 ]
