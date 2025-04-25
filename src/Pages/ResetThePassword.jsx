@@ -36,13 +36,13 @@ function ResetThePassword() {
             </h1>
             <div className="flex flex-col gap-3 w-full">
               <input
-              type="text"
+              type="password"
               placeholder="New Password"
               id="new-password"
               className="bg-white rounded-[10px] w-full h-11 p-2.5"
             />
             <input
-              type="text"
+              type="password"
               placeholder="Confirm Password"
               id="confirm-password"
               className="bg-white rounded-[10px] w-full h-11 p-2.5 mb-20"
