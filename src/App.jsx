@@ -9,6 +9,7 @@ import ParentRegistration from './Pages/ParentRegistration.jsx';
 import TeacherRegistration from './Pages/TeacherRegistration.jsx';
 import ClassSection from './Pages/ClassSection.jsx';
 import ClassInformation from './Pages/ClassInformation.jsx';
+import Attendance from './Pages/Attendance.jsx';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <Route path="/teacher-registration" element={<TeacherRegistration />} />
         <Route path="/class-section" element={<ClassSection />} />
         <Route path="/class-information" element={<ClassInformation />} />
+        <Route path="/attendance" element={<Attendance />} />
       </Routes>
     </Router>
   )

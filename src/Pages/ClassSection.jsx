@@ -9,7 +9,7 @@ function ClassSection() {
       <div className="body py-10 px-30 h-full">
         <div className="flex justify-between mb-15">
           <h1 className="text-primary font-headings text-5xl">CLASS SECTIONS</h1>
-          <button className="bg-primary rounded-lg py-3 px-3 font-headings text-white flex gap-2 cursor-pointer">ADD SECTION <img src={addIcon} alt="icon" className="w-7 h-5"/></button>
+          <button className="bg-primary rounded-lg py-3 px-3 font-headings text-white flex gap-2 cursor-pointer">ADD SECTION <img src={addIcon} alt="icon" className="w-5 h-5"/></button>
         </div>
         <input type="text" className="border rounded-md h-8 p-4 w-90" placeholder="Search"/>
 
@@ -29,7 +29,6 @@ function ClassSection() {
             { header: "Year", accessor: "year" },
             { header: "Section", accessor: "section" },
           ]}
-          getRowUrl={(row) => `/${row.section.toLowerCase()}-attendance`} // Importante to para sa pag navigate sa row
 
         />
       </div>
