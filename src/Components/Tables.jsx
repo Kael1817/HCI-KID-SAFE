@@ -5,6 +5,9 @@ function Table({ columns, data }) {
 
   return (
     <div className="py-2 max-h-[500px] overflow-y-auto">
+      <dialog className="modal">
+        <h1>THIS IS A MODAL</h1>
+      </dialog>
       <table className="w-full border-collapse text-center">
         <thead>
           <tr className="bg-primary text-white text-xl">
@@ -28,15 +31,6 @@ function Table({ columns, data }) {
               {columns.map((column, colIndex) => {
                 const cellValue = row[column.accessor];
                 let cellStyle = "";
-
-                // Apply styles based on status
-                if (column.accessor === "timeIn" || column.accessor === "timeOut") {
-                  if (row.status === "Late" && column.accessor === "timeIn") {
-                    cellStyle = "text-red-500";
-                  } else if (row.status === "Absent") {
-                    cellStyle = "text-gray-500";
-                  }
-                }
 
                 return (
                   <td key={colIndex} className={`px-4 py-2 ${cellStyle}`}>

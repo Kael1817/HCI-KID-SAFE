@@ -3,6 +3,8 @@ import { useLocation } from "react-router-dom";
 import add from "../assets/add-icon.png";
 import Table from "../Components/Tables";
 import { useNavigate } from "react-router-dom";
+import InfoTable from "../Components/InfoTable";
+import StudentsData from "../data/student.json"
 
 function Attendance() {
   const location = useLocation();
@@ -10,9 +12,12 @@ function Attendance() {
   const navigate = useNavigate();
 
   const today = new Date().toISOString().split('T')[0];
+
   const back = () => {
     navigate("/class-section");
   }
+
+ 
 
   return (
     <div>
@@ -30,18 +35,14 @@ function Attendance() {
           <input type="text" placeholder="Search" className="border border-secondary rounded-lg text-md h-8 p-2" />
         </div>
         <div className="py-2 max-h-[500px] overflow-y-auto mb-30">
-        <Table 
-          data={[
-            {no:1 , lrn: "123456789", lastName: "Doe", firstName: "John", middleName: "Smith", status: "Present", timeIn: "8:00 AM", timeOut: "3:00 PM"},
-            {no:2 , lrn: "987654321", lastName: "Smith", firstName: "Jane", middleName: "Doe", status: "Absent", timeIn: "N/A", timeOut: "N/A"},
-            {no:3 , lrn: "456789123", lastName: "Brown", firstName: "Charlie", middleName: "Johnson", status: "Late", timeIn: "8:30 AM", timeOut: "3:00 PM"},
-          ]}
+        <InfoTable 
+          data={StudentsData}
           columns={[
-            { header: "No.", accessor: "no" },
+            { header: "No.", accessor: "id" },
             { header: "LRN", accessor: "lrn" },
-            { header: "Last Name", accessor: "lastName" },
-            { header: "First Name", accessor: "firstName" },
-            { header: "Middle Name", accessor: "middleName" },
+            { header: "Last Name", accessor: "last name" },
+            { header: "First Name", accessor: "name" },
+            { header: "Middle Name", accessor: "middle name" },
             { header: "Status", accessor: "status" },
             { header: "Time In", accessor: "timeIn" },
             { header: "Time Out", accessor: "timeOut" },
