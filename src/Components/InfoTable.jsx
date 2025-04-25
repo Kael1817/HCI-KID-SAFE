@@ -30,7 +30,8 @@ function InfoTable({ columns, data }) {
 
   return (
     <div className="info-table relative">
-      <table className="w-full border-collapse text-center">
+      <div className="overflow-x-auto max-h-[356px] overflow-y-auto">
+        <table className="w-full border-collapse text-center ">
         <thead>
           <tr className="bg-primary text-white text-xl">
             {columns.map((column, index) => (
@@ -38,7 +39,7 @@ function InfoTable({ columns, data }) {
             ))}
           </tr>
         </thead>
-        <tbody>
+        <tbody className="max-h-[400px] overflow-y-auto"> {/* Scrollable body */}
           {data.map((row, rowIndex) => (
             <tr
               key={rowIndex}
@@ -52,6 +53,8 @@ function InfoTable({ columns, data }) {
           ))}
         </tbody>
       </table>
+      </div>
+      
 
       {showModal && selectedRow && (
         <div className="fixed inset-0 bg-secondary bg-opacity-90 flex items-center justify-center z-50">

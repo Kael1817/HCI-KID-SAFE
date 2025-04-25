@@ -1,10 +1,9 @@
 import Header from "../Components/Header";
 import { useLocation } from "react-router-dom";
 import add from "../assets/add-icon.png";
-import Table from "../Components/Tables";
-import { useNavigate } from "react-router-dom";
 import InfoTable from "../Components/InfoTable";
-import StudentsData from "../data/student.json"
+import { useNavigate } from "react-router-dom";
+import StudentsData from "../data/student.json";
 
 function Attendance() {
   const location = useLocation();
@@ -13,11 +12,12 @@ function Attendance() {
 
   const today = new Date().toISOString().split('T')[0];
 
+  // Filter the data based on the section
+  const filteredStudents = StudentsData.filter(student => student.section === sectionName);
+
   const back = () => {
     navigate("/class-section");
   }
-
- 
 
   return (
     <div>
@@ -34,23 +34,23 @@ function Attendance() {
           </div>
           <input type="text" placeholder="Search" className="border border-secondary rounded-lg text-md h-8 p-2" />
         </div>
-        <div className="py-2 max-h-[500px] overflow-y-auto mb-30">
-        <InfoTable 
-          data={StudentsData}
-          columns={[
-            { header: "No.", accessor: "id" },
-            { header: "LRN", accessor: "lrn" },
-            { header: "Last Name", accessor: "lastName" },
-            { header: "First Name", accessor: "name" },
-            { header: "Middle Name", accessor: "middleName" },
-            { header: "Status", accessor: "status" },
-            { header: "Time In", accessor: "timeIn" },
-            { header: "Time Out", accessor: "timeOut" },
-          ]}
-        />
+        <div className="py-2 max-h-[500px] overflow-y-auto mb-10">
+          <InfoTable 
+            data={filteredStudents}
+            columns={[
+              { header: "No.", accessor: "id" },
+              { header: "LRN", accessor: "lrn" },
+              { header: "Last Name", accessor: "lastName" },
+              { header: "First Name", accessor: "name" },
+              { header: "Middle Name", accessor: "middleName" },
+              { header: "Status", accessor: "status" },
+              { header: "Time In", accessor: "timeIn" },
+              { header: "Time Out", accessor: "timeOut" },
+            ]}
+          />
         </div>
         <div className="flex justify-between ">
-            <button className="bg-primary rounded-lg py-3 px-3 font-bold text-white flex gap-2 cursor-pointer w-25 justify-center items-center" onClick={back }>BACK</button>
+            <button className="bg-primary rounded-lg py-3 px-3 font-bold text-white flex gap-2 cursor-pointer w-25 justify-center items-center" onClick={back}>BACK</button>
             <div className="flex gap-5">
               <button className="bg-primary rounded-lg py-3 px-3 font-bold text-white flex gap-2 cursor-pointer w-35 justify-center items-center">Generate PDF</button>
               <button className="bg-primary rounded-lg py-3 px-3 font-bold text-white flex gap-2 cursor-pointer w-35 justify-center items-center">ON SCANNER</button>
