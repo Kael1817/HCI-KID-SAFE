@@ -1,8 +1,14 @@
 import { Link } from "react-router-dom";
 import background from "../assets/background 1.png";
 import logo from "../assets/school_logo.png";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
+  const navigate = useNavigate();
+
+  const login = () => {
+    navigate("/class-section");
+  }
   return (
     <div
       className="login-page relative flex justify-between py-16 px-25 min-h-screen bg-cover bg-center"
@@ -37,7 +43,8 @@ function Login() {
               id="password"
               className="bg-white rounded-[10px] w-full h-11 p-2.5 mb-10"
             />
-            <button className="bg-primary text-white font-bold w-full h-11 rounded-xl cursor-pointer text-xl">
+            <button className="bg-primary text-white font-bold w-full h-11 rounded-xl cursor-pointer text-xl"
+            onClick={login}>
               Login
             </button>
             <Link to="/reset-password" className="text-white font-bold mb-23">

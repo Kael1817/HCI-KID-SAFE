@@ -30,11 +30,12 @@ function ResetThePassword() {
         </div>
 
         <div className="login-panel w-[450px] h-[581px] p-9 bg-[rgba(144,159,170,0.8)] rounded-4xl">
-          <div className="login-content flex flex-col items-center gap-4 h-full">
-            <h1 className="text-5xl text-primary font-headings mb-20">
+          <div className="login-content flex flex-col items-center gap-4 h-full justify-between">
+            <h1 className="text-5xl text-primary font-headings ">
               RESET PASSWORD
             </h1>
-            <input
+            <div className="flex flex-col gap-3 w-full">
+              <input
               type="text"
               placeholder="New Password"
               id="new-password"
@@ -46,12 +47,16 @@ function ResetThePassword() {
               id="confirm-password"
               className="bg-white rounded-[10px] w-full h-11 p-2.5 mb-20"
             />
-            <button className="bg-primary text-white font-bold w-full h-11 rounded-xl cursor-pointer text-xl" onClick={Save}>
+            </div>
+            <div className="flex flex-col gap-3 w-full items-center">
+              <button className="bg-primary text-white font-bold w-full h-11 rounded-xl cursor-pointer text-xl" onClick={Save}>
               Save
             </button>
-            <Link to="/" className="text-white font-bold">
+            <Link to="/" className="text-white font-bold mb-10">
               Back to Login
             </Link>
+            </div>
+            
           </div>
         </div>
       </div>

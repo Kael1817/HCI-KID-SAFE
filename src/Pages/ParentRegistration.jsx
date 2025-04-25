@@ -6,7 +6,7 @@ function ParentRegistration() {
   const navigate = useNavigate();
 
   const Submit = () => {
-    navigate('parent-dashboard');
+    navigate('/class-information');
   }
   return (
     <div className="relative flex justify-between py-10 px-70 min-h-screen bg-quaternary">
@@ -36,13 +36,8 @@ function ParentRegistration() {
             <input type="text" placeholder='Grade Level' className='bg-white rounded-lg h-10 p-5 text-lg w-[469px]' />
             <input type="text" placeholder='Section' className='bg-white rounded-lg h-10 p-5 text-lg w-[469px]' />
           </div>
-          <button className='text-bold text-xl bg-primary p-2 rounded-lg text-white cursor-pointer w-40' onClick={Submit}>Save</button>
-
-
-
-
+          <button className='font-bold text-xl bg-primary p-2 rounded-lg text-white cursor-pointer w-full' onClick={Submit}>Save</button>
         </div>
-      
     </div>
   );
 }

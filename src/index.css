@@ -18,7 +18,7 @@
 
 /* Custom Theme Variables */
 @theme {
-  --font-headings: 'Anton', sans-serif;
+  --font-headings: 'Anton';
   --font-body: 'Inter', sans-serif;
 
   --color-primary: #002147;
