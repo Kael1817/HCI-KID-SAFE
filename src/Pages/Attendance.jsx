@@ -40,9 +40,9 @@ function Attendance() {
           columns={[
             { header: "No.", accessor: "id" },
             { header: "LRN", accessor: "lrn" },
-            { header: "Last Name", accessor: "last name" },
+            { header: "Last Name", accessor: "lastName" },
             { header: "First Name", accessor: "name" },
-            { header: "Middle Name", accessor: "middle name" },
+            { header: "Middle Name", accessor: "middleName" },
             { header: "Status", accessor: "status" },
             { header: "Time In", accessor: "timeIn" },
             { header: "Time Out", accessor: "timeOut" },

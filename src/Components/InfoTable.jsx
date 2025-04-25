@@ -1,11 +1,15 @@
 import { useState } from "react";
+// Import your student data (assuming it's a static JSON file)
+import studentData from '../data/student.json';
 
 function InfoTable({ columns, data }) {
   const [showModal, setShowModal] = useState(false);
   const [selectedRow, setSelectedRow] = useState(null);
 
   const handleCellClick = (rowData) => {
-    setSelectedRow({ ...rowData }); // make a copy for editing
+    const studentInfo = studentData.find(student => student.id === rowData.id);
+    const mergedData = { ...rowData, ...studentInfo }; // Merge rowData with additional data from studentData
+    setSelectedRow(mergedData);
     setShowModal(true);
   };
 
@@ -50,53 +54,158 @@ function InfoTable({ columns, data }) {
       </table>
 
       {showModal && selectedRow && (
-        <div className="fixed top-0 left-0 w-full h-full bg-secondary bg-opacity-90 flex items-center justify-center z-50">
-          <div className="bg-white p-6 rounded-lg shadow-lg w-[1000px] max-h-[90vh] overflow-y-auto ">
+        <div className="fixed inset-0 bg-secondary bg-opacity-90 flex items-center justify-center z-50">
+          <div className="bg-white p-6 rounded-xl shadow-lg w-[1000px] max-h-full">
             <h2 className="text-xl font-bold text-primary mb-3 text-center">STUDENT INFORMATION</h2>
-            {columns.map((col, index) => (
-              <div key={index} className="mb-3 text-left flex gap-2 items-center">
-                <label className="flex w-40 font-semibold text-sm mb-1">{col.header}</label>
-                {/* Check if the column is one of the editable text fields */}
-                {["id", "name", "last name", "middle name", "lrn"].includes(col.accessor) ? (
-                  <input
-                    type="text"
-                    value={selectedRow[col.accessor]}
-                    onChange={(e) => handleChange(e, col.accessor)}
-                    className="flex w-full border border-gray-400 rounded px-3 py-1"
-                  />
-                ) : col.accessor === "status" ? (
-                  <select
-                    value={selectedRow[col.accessor]}
-                    onChange={(e) => handleChange(e, col.accessor)}
-                    className="flex w-full border border-gray-400 rounded px-3 py-1"
-                  >
-                    <option value="Absent">Absent</option>
-                    <option value="Present">Present</option>
-                    <option value="Late">Late</option>
-                  </select>
-                ) : col.accessor === "timeIn" || col.accessor === "timeOut" ? (
-                  <input
-                    type="time"
-                    value={selectedRow[col.accessor]}
-                    onChange={(e) => handleChange(e, col.accessor)}
-                    className="flex w-full border border-gray-400 rounded px-3 py-1"
-                  />
-                ) : (
-                  <span>{selectedRow[col.accessor]}</span>
-                )}
+
+            {/* Display basic student info */}
+            <div className="mb-3 text-left flex gap-2 items-center">
+              <label className="flex w-40 font-semibold text-sm mb-1">ID</label>
+              <input
+                type="text"
+                value={selectedRow.id || ""}
+                onChange={(e) => handleChange(e, "id")}
+                className="flex w-full border border-gray-400 rounded px-3 py-1"
+              />
+            </div>
+
+            <div className="mb-3 text-left flex gap-2 items-center">
+              <label className="flex w-40 font-semibold text-sm mb-1">Name</label>
+              <input
+                type="text"
+                value={selectedRow.name || ""}
+                onChange={(e) => handleChange(e, "name")}
+                className="flex w-full border border-gray-400 rounded px-3 py-1"
+              />
+            </div>
+
+            <div className="mb-3 text-left flex gap-2 items-center">
+              <label className="flex w-40 font-semibold text-sm mb-1">Last Name</label>
+              <input
+                type="text"
+                value={selectedRow.lastName || ""}
+                onChange={(e) => handleChange(e, "lastName")}
+                className="flex w-full border border-gray-400 rounded px-3 py-1"
+              />
+            </div>
+
+            <div className="mb-3 text-left flex gap-2 items-center">
+              <label className="flex w-40 font-semibold text-sm mb-1">Middle Name</label>
+              <input
+                type="text"
+                value={selectedRow.middleName || ""}
+                onChange={(e) => handleChange(e, "middleName")}
+                className="flex w-full border border-gray-400 rounded px-3 py-1"
+              />
+            </div>
+
+            <div className="mb-3 text-left flex gap-2 items-center">
+              <label className="flex w-40 font-semibold text-sm mb-1">LRN</label>
+              <input
+                type="text"
+                value={selectedRow.lrn || ""}
+                onChange={(e) => handleChange(e, "lrn")}
+                className="flex w-full border border-gray-400 rounded px-3 py-1"
+              />
+            </div>
+
+            <div className="mb-3 text-left flex gap-2 items-center">
+              <label className="flex w-40 font-semibold text-sm mb-1">Section</label>
+              <input
+                type="text"
+                value={selectedRow.section || ""}
+                onChange={(e) => handleChange(e, "section")}
+                className="flex w-full border border-gray-400 rounded px-3 py-1"
+              />
+            </div>
+
+            <div className="mb-3 text-left flex gap-2 items-center">
+              <label className="flex w-40 font-semibold text-sm mb-1">Adviser</label>
+              <input
+                type="text"
+                value={selectedRow.adviser || ""}
+                onChange={(e) => handleChange(e, "adviser")}
+                className="flex w-full border border-gray-400 rounded px-3 py-1"
+              />
+            </div>
+
+            <div className="mb-3 text-left flex gap-2 items-center">
+              <label className="flex w-40 font-semibold text-sm mb-1">Parent's Name</label>
+              <input
+                type="text"
+                value={selectedRow.parentName || ""}
+                onChange={(e) => handleChange(e, "parentName")}
+                className="flex w-full border border-gray-400 rounded px-3 py-1"
+              />
+            </div>
+
+            <div className="mb-3 text-left flex gap-2 items-center">
+              <label className="flex w-40 font-semibold text-sm mb-1">Parent's Contact</label>
+              <input
+                type="text"
+                value={selectedRow.parentContact || ""}
+                onChange={(e) => handleChange(e, "parentContact")}
+                className="flex w-full border border-gray-400 rounded px-3 py-1"
+              />
+            </div>
+
+            <div className="mb-3 text-left flex gap-2 items-center">
+              <label className="flex w-40 font-semibold text-sm mb-1">Address</label>
+              <input
+                type="text"
+                value={selectedRow.address || ""}
+                onChange={(e) => handleChange(e, "address")}
+                className="flex w-full border border-gray-400 rounded px-3 py-1"
+              />
+            </div>
+
+            {/* Separate Status, TimeIn, TimeOut */}
+            <div className="mb-3 text-left">
+              <h3 className="font-semibold text-lg text-center">Attendance Info</h3>
+              <div className="flex gap-2 items-center">
+                <label className="w-40 font-semibold text-sm">Status</label>
+                <select
+                  value={selectedRow.status || ""}
+                  onChange={(e) => handleChange(e, "status")}
+                  className="flex w-full border border-gray-400 rounded px-3 py-1 cursor-pointer"
+                >
+                  <option value="Absent">Absent</option>
+                  <option value="Present">Present</option>
+                  <option value="Late">Late</option>
+                </select>
               </div>
-            ))}
+
+              <div className="flex gap-2 items-center mt-2">
+                <label className="w-40 font-semibold text-sm">Time In</label>
+                <input
+                  type="time"
+                  value={selectedRow.timeIn || ""}
+                  onChange={(e) => handleChange(e, "timeIn")}
+                  className="flex w-full border border-gray-400 rounded px-3 py-1"
+                />
+              </div>
+
+              <div className="flex gap-2 items-center mt-2">
+                <label className="w-40 font-semibold text-sm">Time Out</label>
+                <input
+                  type="time"
+                  value={selectedRow.timeOut || ""}
+                  onChange={(e) => handleChange(e, "timeOut")}
+                  className="flex w-full border border-gray-400 rounded px-3 py-1"
+                />
+              </div>
+            </div>
 
             <div className="flex justify-end gap-3 mt-4">
               <button
                 onClick={closeModal}
-                className="bg-gray-500 text-white py-2 px-4 rounded hover:bg-gray-600"
+                className="bg-gray-500 text-white py-2 px-4 rounded hover:bg-gray-600 cursor-pointer"
               >
                 Cancel
               </button>
               <button
                 onClick={handleUpdate}
-                className="bg-primary text-white py-2 px-4 rounded hover:bg-blue-700"
+                className="bg-primary text-white py-2 px-4 rounded hover:bg-blue-700 cursor-pointer"
               >
                 Update
               </button>
