@@ -7,8 +7,16 @@ function Login() {
   const navigate = useNavigate();
 
   const login = () => {
-    navigate("/class-section");
-  }
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+
+    if (username === "admin" && password === "admin123") {
+      navigate("/class-section");
+    } else {
+      alert("Invalid username or password");
+    }
+  };
+
   return (
     <div
       className="login-page relative flex justify-between py-16 px-25 min-h-screen bg-cover bg-center"
