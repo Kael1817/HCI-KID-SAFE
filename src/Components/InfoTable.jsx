@@ -1,6 +1,7 @@
 import { useState } from "react";
 // Import your student data (assuming it's a static JSON file)
 import studentData from '../data/student.json';
+const today = new Date().toISOString().split('T')[0];
 
 function InfoTable({ columns, data }) {
   const [showModal, setShowModal] = useState(false);
@@ -30,32 +31,69 @@ function InfoTable({ columns, data }) {
 
   return (
     <div className="info-table relative">
-      <div className="overflow-x-auto max-h-[356px] overflow-y-auto">
-        <table className="w-full border-collapse text-center ">
-        <thead>
-          <tr className="bg-primary text-white text-xl">
-            {columns.map((column, index) => (
-              <th key={index} className="px-4 py-2">{column.header}</th>
-            ))}
-          </tr>
-        </thead>
-        <tbody className="max-h-[400px] overflow-y-auto"> {/* Scrollable body */}
-          {data.map((row, rowIndex) => (
-            <tr
-              key={rowIndex}
-              className="bg-gray-300 text-lg cursor-pointer transition-all duration-200 hover:bg-blue-400 hover:shadow-md hover:font-semibold"
-              onClick={() => handleCellClick(row)}
-            >
-              {columns.map((column, colIndex) => (
-                <td key={colIndex} className="px-4 py-2">{row[column.accessor]}</td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <div className="flex justify-between items-center mb-4">
+        <div className="flex gap-3 text-lg rounded-lg p-2 ">
+            <p className="font-bold">Date: </p>
+            <input type="date" defaultValue={today} className="cursor-pointer"/>
+            <input type="text" placeholder="Search" className="border border-secondary rounded-lg text-md h-8 p-2" />
+            
+      </div>
+      <div>
+      <button
+          onClick={() => {
+            setSelectedRow({
+              id: "",
+              name: "",
+              lastName: "",
+              middleName: "",
+              lrn: "",
+              section: "",
+              adviser: "",
+              parentName: "",
+              parentContact: "",
+              address: "",
+              status: "",
+              timeIn: "",
+              timeOut: "",
+            });
+            setShowModal(true);
+          }}
+          className="bg-primary text-white py-2 px-4 rounded hover:bg-blue-700 cursor-pointer"
+        >
+          Add Student
+        </button>
+      </div>
       </div>
       
+      
+      <div className="flex justify-end mb-4">
+      </div>
 
+      <div className="overflow-x-auto max-h-[356px] overflow-y-auto">
+        <table className="w-full border-collapse text-center ">
+          <thead>
+            <tr className="bg-primary text-white text-xl">
+              {columns.map((column, index) => (
+                <th key={index} className="px-4 py-2">{column.header}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody className="max-h-[400px] overflow-y-auto"> {/* Scrollable body */}
+            {data.map((row, rowIndex) => (
+              <tr
+                key={rowIndex}
+                className="bg-gray-300 text-lg cursor-pointer transition-all duration-200 hover:bg-blue-400 hover:shadow-md hover:font-semibold"
+                onClick={() => handleCellClick(row)}
+              >
+                {columns.map((column, colIndex) => (
+                  <td key={colIndex} className="px-4 py-2">{row[column.accessor]}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      
       {showModal && selectedRow && (
         <div className="fixed inset-0 bg-secondary bg-opacity-90 flex items-center justify-center z-50">
           <div className="bg-white p-6 rounded-xl shadow-lg w-[1000px] max-h-full">

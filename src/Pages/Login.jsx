@@ -10,9 +10,12 @@ function Login() {
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
-    if (username === "admin" && password === "admin123") {
+    if (username === "teacher" && password === "teacher123") {
       navigate("/class-section");
-    } else {
+    } else if (username === "guardian" && password === "guardian123") {
+      navigate("/guardian-dashboard");
+    }
+    else {
       alert("Invalid username or password");
     }
   };

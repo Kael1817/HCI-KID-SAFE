@@ -9,7 +9,15 @@ function ResetPassword() {
   const navigate = useNavigate();
 
   const Submit = () => {
-    navigate("/reset-the-password");
+    const username = document.querySelector('input[placeholder="Username"]').value;
+    const answer = document.getElementById("answer").value;
+
+    if (username === "admin" && answer.toLowerCase() === "milo") {
+      alert("Password successfully reset!");
+      navigate("/");
+    } else {
+      alert("Invalid username or answer. Please try again.");
+    }
   };
 
   return (
@@ -37,7 +45,8 @@ function ResetPassword() {
               RESET PASSWORD
             </h1>
             <div className="flex flex-col gap-3 w-full">
-              <Questionnaire />
+              <input type="text" placeholder="Username" className="bg-white rounded-[10px] w-full h-11 p-2.5"/>
+              <Questionnaire /> 
             <input
               type="text"
               placeholder="Answer"
