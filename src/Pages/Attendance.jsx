@@ -1,6 +1,6 @@
 import Header from "../Components/Header";
 import { useLocation } from "react-router-dom";
-import add from "../assets/add-icon.png";
+import React from "react";
 import InfoTable from "../Components/InfoTable";
 import { useNavigate } from "react-router-dom";
 import StudentsData from "../data/student.json";
@@ -9,6 +9,13 @@ function Attendance() {
   const location = useLocation();
   const sectionName = location.state?.sectionName || null;
   const navigate = useNavigate();
+  const open = () => {
+      alert("Open Scanner");
+  }
+
+  const close = () => {
+    alert("Close Scanner");
+  }
 
 
   // Filter the data based on the section
@@ -45,8 +52,8 @@ function Attendance() {
         <div className="flex justify-between ">
             <button className="bg-primary rounded-lg py-3 px-3 font-bold text-white flex gap-2 cursor-pointer w-25 justify-center items-center" onClick={back}>BACK</button>
             <div className="flex gap-5">
-              <button className="bg-primary rounded-lg py-3 px-3 font-bold text-white flex gap-2 cursor-pointer w-35 justify-center items-center">ON SCANNER</button>
-              <button className="bg-primary rounded-lg py-3 px-3 font-bold text-white flex gap-2 cursor-pointer w-35 justify-center items-center">OFF SCANNER</button>
+              <button className="bg-primary rounded-lg py-3 px-3 font-bold text-white flex gap-2 cursor-pointer w-35 justify-center items-center" onClick={open}>ON SCANNER</button>
+              <button className="bg-primary rounded-lg py-3 px-3 font-bold text-white flex gap-2 cursor-pointer w-35 justify-center items-center" onClick={close}>OFF SCANNER</button>
             </div>
         </div>
       </div>

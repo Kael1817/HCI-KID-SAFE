@@ -42,7 +42,6 @@ function InfoTable({ columns, data }) {
       <button
           onClick={() => {
             setSelectedRow({
-              id: "",
               name: "",
               lastName: "",
               middleName: "",
@@ -245,7 +244,10 @@ function InfoTable({ columns, data }) {
                 Cancel
               </button>
               <button
-                onClick={handleUpdate}
+                onClick={() => {
+                  handleUpdate();
+                  alert("Successfully updated!");
+                }}
                 className="bg-primary text-white py-2 px-4 rounded hover:bg-blue-700 cursor-pointer"
               >
                 Update
